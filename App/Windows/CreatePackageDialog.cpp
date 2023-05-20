@@ -5,7 +5,7 @@
 #include <Tera/CoreTMM.h>
 
 CreatePackageDialog::CreatePackageDialog(int coreVer, wxWindow* parent)
-  : WXDialog(parent, wxID_ANY, _("Create GPK"), wxDefaultPosition, wxSize(361, 235))
+  : WXDialog(parent, wxID_ANY, _("新建 GPK"), wxDefaultPosition, wxSize(361, 235))
 {
   CoreVersion = coreVer;
   SetSize(FromDIP(GetSize()));
@@ -21,28 +21,28 @@ CreatePackageDialog::CreatePackageDialog(int coreVer, wxWindow* parent)
   fgSizer1->SetNonFlexibleGrowMode(wxFLEX_GROWMODE_SPECIFIED);
 
   wxStaticText* m_staticText3;
-  m_staticText3 = new wxStaticText(this, wxID_ANY, wxT("Name:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText3 = new wxStaticText(this, wxID_ANY, wxT("名称:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText3->Wrap(-1);
   fgSizer1->Add(m_staticText3, 0, wxALL | wxALIGN_CENTER_VERTICAL | wxALIGN_RIGHT, FromDIP(5));
 
-  PackageName = new wxTextCtrl(this, wxID_ANY, wxT("Untitled"), wxDefaultPosition, wxDefaultSize, 0);
-  PackageName->SetToolTip(wxT("GPK file name"));
+  PackageName = new wxTextCtrl(this, wxID_ANY, wxT("无标题"), wxDefaultPosition, wxDefaultSize, 0);
+  PackageName->SetToolTip(wxT("GPK文件名称"));
 
   fgSizer1->Add(PackageName, 1, wxALL | wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText4;
-  m_staticText4 = new wxStaticText(this, wxID_ANY, wxT("Composite:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText4 = new wxStaticText(this, wxID_ANY, wxT("合成:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText4->Wrap(-1);
   fgSizer1->Add(m_staticText4, 0, wxALL | wxALIGN_RIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  Composite = new wxTextCtrl(this, wxID_ANY, wxT("None"), wxDefaultPosition, wxDefaultSize, 0);
-  Composite->SetToolTip(wxT("Composite path. Mandatory if the GPK is going to be used with TMM!"));
+  Composite = new wxTextCtrl(this, wxID_ANY, wxT("没有任何"), wxDefaultPosition, wxDefaultSize, 0);
+  Composite->SetToolTip(wxT("合成路径。如果GPK将与TMM一起使用，则必须使用!"));
   Composite->Enable(CoreVersion > VER_TERA_CLASSIC);
 
   fgSizer1->Add(Composite, 1, wxALL | wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText5;
-  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("Licensee:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("许可证:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText5->Wrap(-1);
   fgSizer1->Add(m_staticText5, 0, wxALL | wxALIGN_CENTER_VERTICAL | wxALIGN_RIGHT, FromDIP(5));
 
@@ -60,7 +60,7 @@ CreatePackageDialog::CreatePackageDialog(int coreVer, wxWindow* parent)
   m_staticText8->Wrap(-1);
   fgSizer1->Add(m_staticText8, 0, wxALL | wxALIGN_RIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  wxString CompressionChoices[] = { wxT("None"), wxT("LZO") };
+  wxString CompressionChoices[] = { wxT("没有"), wxT("LZO") };
   int CompressionNChoices = sizeof(CompressionChoices) / sizeof(wxString);
   Compression = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, CompressionNChoices, CompressionChoices, 0);
   Compression->SetSelection(0);
@@ -69,7 +69,7 @@ CreatePackageDialog::CreatePackageDialog(int coreVer, wxWindow* parent)
   // Disable it for now. Maybe I'll figure out a workaround in the future.
   // TODO: fix compression for TW client
   Compression->Enable(false);
-  Compression->SetToolTip(wxT("Compress GPK file"));
+  Compression->SetToolTip(wxT("压缩GPK文件"));
 
   fgSizer1->Add(Compression, 0, wxALL, FromDIP(5));
 
@@ -86,10 +86,10 @@ CreatePackageDialog::CreatePackageDialog(int coreVer, wxWindow* parent)
 
   bSizer11->Add(0, 0, 1, wxEXPAND, FromDIP(5));
 
-  OkButton = new wxButton(this, wxID_ANY, wxT("OK"), wxDefaultPosition, wxDefaultSize, 0);
+  OkButton = new wxButton(this, wxID_ANY, wxT("确定"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer11->Add(OkButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  CancelButton = new wxButton(this, wxID_ANY, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(this, wxID_ANY, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer11->Add(CancelButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
