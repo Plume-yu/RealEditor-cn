@@ -15,7 +15,7 @@ BakeModDialog::BakeModDialog(wxWindow* parent)
 	bSizer1 = new wxBoxSizer(wxVERTICAL);
 
 	wxStaticText* m_staticText2;
-	m_staticText2 = new wxStaticText(this, wxID_ANY, wxT("Select a TMM mod you want to bake into the client"), wxDefaultPosition, wxDefaultSize, 0);
+	m_staticText2 = new wxStaticText(this, wxID_ANY, wxT("选择您要添加到客户端的 TMM 模组"), wxDefaultPosition, wxDefaultSize, 0);
 	m_staticText2->Wrap(-1);
 	bSizer1->Add(m_staticText2, 0, wxALL, FromDIP(5));
 
