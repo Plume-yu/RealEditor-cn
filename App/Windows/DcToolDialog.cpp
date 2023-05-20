@@ -55,12 +55,12 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer12 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText8;
-  m_staticText8 = new wxStaticText(this, wxID_ANY, wxT("Client version:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText8 = new wxStaticText(this, wxID_ANY, wxT("客户端版本:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText8->Wrap(-1);
   bSizer12->Add(m_staticText8, 0, wxALL, FromDIP(5));
 
   FString ver = GetClientVersionString(cfg.RootDir);
-  ClientVersion = new wxStaticText(this, wxID_ANY, ver.Empty() ? wxT("None") : ver.WString(), wxDefaultPosition, wxDefaultSize, 0);
+  ClientVersion = new wxStaticText(this, wxID_ANY, ver.Empty() ? wxT("没有任何") : ver.WString(), wxDefaultPosition, wxDefaultSize, 0);
   ClientVersion->Wrap(-1);
   bSizer12->Add(ClientVersion, 1, wxTOP | wxBOTTOM | wxRIGHT, FromDIP(5));
 
@@ -132,7 +132,7 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText1;
-  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("DataCenter文件:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("DataCenter 文件:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText1->Wrap(-1);
   bSizer2->Add(m_staticText1, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -143,7 +143,7 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer1->Add(bSizer2, 0, wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText10;
-  m_staticText10 = new wxStaticText(this, wxID_ANY, wxT("Key and IV fields must be filled for the Export feature."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText10 = new wxStaticText(this, wxID_ANY, wxT("必须为“导出”功能输入Key 和 IV."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText10->Wrap(-1);
   bSizer1->Add(m_staticText10, 0, wxALL, FromDIP(5));
 
@@ -153,21 +153,21 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   wxBoxSizer* bSizer110;
   bSizer110 = new wxBoxSizer(wxHORIZONTAL);
 
-  wxString ClientChoices[] = { wxT("Auto-detect"), wxT("Old client(32-bit)"), wxT("Modern client(64-bit)") };
+  wxString ClientChoices[] = { wxT("自动检测"), wxT("Old 客户端(32-bit)"), wxT("Modern 客户端(64-bit)") };
   int ClientNChoices = sizeof(ClientChoices) / sizeof(wxString);
-  Client = new wxRadioBox(this, wxID_ANY, wxT("Client"), wxDefaultPosition, wxDefaultSize, ClientNChoices, ClientChoices, 1, wxRA_SPECIFY_COLS);
+  Client = new wxRadioBox(this, wxID_ANY, wxT("客户端"), wxDefaultPosition, wxDefaultSize, ClientNChoices, ClientChoices, 1, wxRA_SPECIFY_COLS);
   Client->SetSelection(0);
   bSizer110->Add(Client, 1, wxALL, FromDIP(5));
 
   wxString ModeChoices[] = { wxT("Binary"), wxT("XML"), wxT("JSON") };
   int ModeNChoices = sizeof(ModeChoices) / sizeof(wxString);
-  Mode = new wxRadioBox(this, wxID_ANY, wxT("Export Type"), wxDefaultPosition, wxDefaultSize, ModeNChoices, ModeChoices, 1, wxRA_SPECIFY_COLS);
+  Mode = new wxRadioBox(this, wxID_ANY, wxT("导出类型"), wxDefaultPosition, wxDefaultSize, ModeNChoices, ModeChoices, 1, wxRA_SPECIFY_COLS);
   Mode->SetSelection(0);
   bSizer110->Add(Mode, 1, wxTOP | wxBOTTOM | wxLEFT, FromDIP(5));
 
   bSizer10->Add(bSizer110, 1, wxEXPAND, 0);
 
-  UnpackButton = new wxButton(this, wxID_ANY, wxT("Export"), wxDefaultPosition, wxDefaultSize, 0);
+  UnpackButton = new wxButton(this, wxID_ANY, wxT("导出"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer10->Add(UnpackButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
@@ -180,12 +180,12 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   wxBoxSizer* bSizer11;
   bSizer11 = new wxBoxSizer(wxHORIZONTAL);
 
-  CloseButton = new wxButton(this, wxID_ANY, wxT("Close"), wxDefaultPosition, wxDefaultSize, 0);
+  CloseButton = new wxButton(this, wxID_ANY, wxT("关闭"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer11->Add(CloseButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
   bSizer11->Add(0, 0, 1, wxEXPAND, FromDIP(5));
 
-  EditButton = new wxButton(this, wxID_ANY, wxT("Edit"), wxDefaultPosition, wxDefaultSize, 0);
+  EditButton = new wxButton(this, wxID_ANY, wxT("编辑"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer11->Add(EditButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
   EditButton->Enable(false);
 
@@ -267,19 +267,19 @@ void DcToolDialog::OnFindClicked(wxCommandEvent& event)
   DCKeyTool tool;
   if (!tool.IsTeraRunning())
   {
-    REDialog::Error("Start your Tera client and try again.", "Tera is not running!");
+    REDialog::Error("启动Tera客户端，然后重试.", "Tera没有运行!");
     return;
   }
   if (!tool.FindKey())
   {
-    REDialog::Error("Wait for the server selection screen to appear and then try again.", "Couldn't find the key!");
+    REDialog::Error("等待服务器选择屏幕出现，然后重试.", "找不到key!");
     return;
   }
   auto results = tool.GetResults();
 
   if (results.empty())
   {
-    REDialog::Error("Possible reasones:\n* TERA is protected by XIGNCODE\n* Client version is not supported\n* Anti-virus software blocked RE from accessing TERA process", "Couldn't find the key!");
+    REDialog::Error("可能的原因：\n*TERA受XIGNCODE保护\n*不支持客户端版本\n*防病毒软件阻止RE访问TERA进程“，”找不到密钥key!");
     return;
   }
   KeyField->SetValue(results.front().first);
@@ -310,7 +310,7 @@ void DcToolDialog::OnUnpackClicked(wxCommandEvent& event)
   {
     DcFilePicker->SetPath(wxEmptyString);
     DcFilePicker->SetInitialDirectory(std::filesystem::path(FPackage::GetDcPath().WString()).parent_path().wstring());
-    REDialog::Error("The DC file does not exist or can't be opened!");
+    REDialog::Error("DC文件不存在或无法打开!");
     DcFilePicker->SetFocus();
     return;
   }
@@ -469,7 +469,7 @@ void DcToolDialog::OnUnpackClicked(wxCommandEvent& event)
       return;
     }
 
-    SendEvent(&progress, UPDATE_PROGRESS_DESC, wxS("Serializing..."));
+    SendEvent(&progress, UPDATE_PROGRESS_DESC, wxS("序列化..."));
 
     MReadStream s(inflatedDc.data(), false, inflatedDc.size());
     PERF_START(SerializeDC);
