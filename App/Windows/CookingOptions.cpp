@@ -105,10 +105,10 @@ CookingOptionsWindow::CookingOptionsWindow(wxWindow* parent, FPackage* package, 
   m_panel14 = new wxPanel(m_panel13, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
   bSizer18->Add(m_panel14, 1, wxEXPAND | wxALL, FromDIP(5));
 
-  SaveButton = new wxButton(m_panel13, wxID_OK, wxT("Save"), wxDefaultPosition, wxDefaultSize, 0);
+  SaveButton = new wxButton(m_panel13, wxID_OK, wxT("保存"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer18->Add(SaveButton, 0, wxALIGN_CENTER_HORIZONTAL | wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  CancelButton = new wxButton(m_panel13, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(m_panel13, wxID_CANCEL, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer18->Add(CancelButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
