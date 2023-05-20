@@ -6,7 +6,7 @@
 #include <wx/statline.h>
 
 BakeModDialog::BakeModDialog(wxWindow* parent)
-	: wxDialog(parent, wxID_ANY, wxT("Bake a mod"), wxDefaultPosition, wxSize(497, 232))
+	: wxDialog(parent, wxID_ANY, wxT("添加模组"), wxDefaultPosition, wxSize(497, 232))
 {
 	SetSize(FromDIP(GetSize()));
 	SetSizeHints(wxDefaultSize, wxDefaultSize);
@@ -23,7 +23,7 @@ BakeModDialog::BakeModDialog(wxWindow* parent)
 	bSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
 	wxStaticText* m_staticText1;
-	m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("Mod:"), wxDefaultPosition, wxDefaultSize, 0);
+	m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("模组:"), wxDefaultPosition, wxDefaultSize, 0);
 	m_staticText1->Wrap(-1);
 	bSizer2->Add(m_staticText1, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -58,7 +58,7 @@ BakeModDialog::BakeModDialog(wxWindow* parent)
 	bSizer3->Add(DestField, 1, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 	wxButton* m_button2;
-	m_button2 = new wxButton(this, wxID_ANY, wxT("Browse..."), wxDefaultPosition, wxDefaultSize, 0);
+	m_button2 = new wxButton(this, wxID_ANY, wxT("浏览..."), wxDefaultPosition, wxDefaultSize, 0);
 	bSizer3->Add(m_button2, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
