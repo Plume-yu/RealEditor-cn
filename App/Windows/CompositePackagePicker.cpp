@@ -28,7 +28,7 @@ CompositePackagePicker::CompositePackagePicker(wxWindow* parent, const wxString&
   wxBoxSizer* bSizer2;
   bSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
-  wxStaticText* m_staticText = new wxStaticText(m_panel1, wxID_ANY, wxT("Package name: "), wxDefaultPosition, wxDefaultSize, 0);
+  wxStaticText* m_staticText = new wxStaticText(m_panel1, wxID_ANY, wxT("包名称 "), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText->Wrap(-1);
   bSizer2->Add(m_staticText, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
@@ -58,11 +58,11 @@ CompositePackagePicker::CompositePackagePicker(wxWindow* parent, const wxString&
   wxBoxSizer* bSizer3;
   bSizer3 = new wxBoxSizer(wxHORIZONTAL);
 
-  OpenButton = new wxButton(m_panel2, wxID_OK, wxT("Open"), wxDefaultPosition, wxDefaultSize, 0);
+  OpenButton = new wxButton(m_panel2, wxID_OK, wxT("打开"), wxDefaultPosition, wxDefaultSize, 0);
   OpenButton->Enable(false);
   bSizer3->Add(OpenButton, 0, wxALL, FromDIP(5));
 
-  CancelButton = new wxButton(m_panel2, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(m_panel2, wxID_CANCEL, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer3->Add(CancelButton, 0, wxALL, FromDIP(5));
 
   m_panel2->SetSizer(bSizer3);
