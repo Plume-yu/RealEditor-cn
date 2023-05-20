@@ -30,7 +30,7 @@
 bool IsClient64(const std::filesystem::path& s1data, bool& outResult)
 {
   std::error_code err;
-  std::filesystem::path exePath = s1data.parent_path().parent_path().parent_path() / L"Binaries" / L"TERA.exe";
+  std::filesystem::path exePath = s1data.parent_path().parent_path().parent_path() / L"二进制文件" / L"TERA.exe";
   if (std::filesystem::exists(exePath, err) && !err)
   {
     DWORD binType = 0;
@@ -42,7 +42,7 @@ bool IsClient64(const std::filesystem::path& s1data, bool& outResult)
 }
 
 DcToolDialog::DcToolDialog(wxWindow* parent)
-  : WXDialog(parent, wxID_ANY, wxT("Export DataCenter file"), wxDefaultPosition, wxSize(457, 465))
+  : WXDialog(parent, wxID_ANY, wxT("导出数据中心文件"), wxDefaultPosition, wxSize(457, 465))
 {
   SetSize(FromDIP(GetSize()));
   FAppConfig cfg = App::GetSharedApp()->GetConfig();
@@ -72,7 +72,7 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer1->Add(m_staticline3, 0, wxEXPAND | wxALL, FromDIP(5));
 
   wxStaticText* m_staticText6;
-  m_staticText6 = new wxStaticText(this, wxID_ANY, wxT("Type your values, or start Tera and press Find. RE must run with Administrator privileges for the Find feature to work correctly."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText6 = new wxStaticText(this, wxID_ANY, wxT("输入您的值，或启动 Tera 并按查找。 RE 必须以管理员权限运行，查找功能才能正常工作."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText6->Wrap(FromDIP(435));
   bSizer1->Add(m_staticText6, 0, wxALL, FromDIP(5));
 
@@ -113,7 +113,7 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
 
   bSizer8->Add(bSizer9, 1, wxEXPAND, FromDIP(5));
 
-  FindButton = new wxButton(this, wxID_ANY, wxT("Find"), wxDefaultPosition, wxDefaultSize, 0);
+  FindButton = new wxButton(this, wxID_ANY, wxT("查找"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer8->Add(FindButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
@@ -124,7 +124,7 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer1->Add(m_staticline2, 0, wxEXPAND | wxALL, FromDIP(5));
 
   wxStaticText* m_staticText5;
-  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("Select a DC file you want to unpack. Can be found in the S1Data folder."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("选择要解压缩的DC文件。可以在S1Data文件夹中找到."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText5->Wrap(-1);
   bSizer1->Add(m_staticText5, 0, wxALL, FromDIP(5));
 
@@ -132,11 +132,11 @@ DcToolDialog::DcToolDialog(wxWindow* parent)
   bSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText1;
-  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("DataCenter file:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("DataCenter文件:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText1->Wrap(-1);
   bSizer2->Add(m_staticText1, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  DcFilePicker = new wxFilePickerCtrl(this, wxID_ANY, wxEmptyString, wxT("Select a DC file"), wxT("*.dat"), wxDefaultPosition, wxDefaultSize, wxFLP_DEFAULT_STYLE);
+  DcFilePicker = new wxFilePickerCtrl(this, wxID_ANY, wxEmptyString, wxT("选择DC文件"), wxT("*.dat"), wxDefaultPosition, wxDefaultSize, wxFLP_DEFAULT_STYLE);
   bSizer2->Add(DcFilePicker, 1, wxALL, FromDIP(5));
 
 
