@@ -16,12 +16,12 @@ CookingOptionsWindow::CookingOptionsWindow(wxWindow* parent, FPackage* package, 
   bSizer11 = new wxBoxSizer(wxVERTICAL);
 
   EnableCompositeInfoButton = new wxCheckBox(m_panel5, wxID_ANY, wxT("Embed composite information"), wxDefaultPosition, wxDefaultSize, 0);
-  EnableCompositeInfoButton->Enable(Package->IsComposite() && Package->GetFolderName() == "None");
-  EnableCompositeInfoButton->SetValue(Package->IsComposite() || Package->GetFolderName().StartsWith("MOD:"));
+  EnableCompositeInfoButton->Enable(Package->IsComposite() && Package->GetFolderName() == "没有任何");
+  EnableCompositeInfoButton->SetValue(Package->IsComposite() || Package->GetFolderName().StartsWith("模组:"));
   bSizer11->Add(EnableCompositeInfoButton, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText3;
-  m_staticText3 = new wxStaticText(m_panel5, wxID_ANY, wxT("This option allows to save composite mapping information necessary for TMM to work."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText3 = new wxStaticText(m_panel5, wxID_ANY, wxT("此选项允许保存TMM工作所需的合成映射信息."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText3->Wrap(FromDIP(480));
   bSizer11->Add(m_staticText3, 0, wxALL, FromDIP(5));
 
@@ -36,13 +36,13 @@ CookingOptionsWindow::CookingOptionsWindow(wxWindow* parent, FPackage* package, 
   wxBoxSizer* bSizer13;
   bSizer13 = new wxBoxSizer(wxVERTICAL);
 
-  DisableTextureCachingButton = new wxCheckBox(m_panel6, wxID_ANY, wxT("Disable texture caching"), wxDefaultPosition, wxDefaultSize, 0);
+  DisableTextureCachingButton = new wxCheckBox(m_panel6, wxID_ANY, wxT("禁用纹理缓存"), wxDefaultPosition, wxDefaultSize, 0);
   DisableTextureCachingButton->SetValue(!package->GetNoTexturePullOnSave() && package->GetFileVersion() == VER_TERA_MODERN && !package->GetPackageFlag(PKG_NoSource));
   DisableTextureCachingButton->Enable(!package->GetNoTexturePullOnSave() && package->GetFileVersion() == VER_TERA_MODERN && !package->GetPackageFlag(PKG_NoSource));
   bSizer13->Add(DisableTextureCachingButton, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText31;
-  m_staticText31 = new wxStaticText(m_panel6, wxID_ANY, wxT("Needed for region-free mods. Pull hi-res textures to this package, discard mips && texture pre-allocations, remove texture cache record."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText31 = new wxStaticText(m_panel6, wxID_ANY, wxT("无区域mods需要。将高分辨率纹理拉到此包，放弃mips&&纹理预分配，删除纹理缓存记录."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText31->Wrap(FromDIP(480));
   bSizer13->Add(m_staticText31, 0, wxALL, FromDIP(5));
 
@@ -57,14 +57,14 @@ CookingOptionsWindow::CookingOptionsWindow(wxWindow* parent, FPackage* package, 
   wxBoxSizer* bSizer131;
   bSizer131 = new wxBoxSizer(wxVERTICAL);
 
-  PreserveOffsetsButton = new wxCheckBox(m_panel61, wxID_ANY, wxT("Preserve offsets"), wxDefaultPosition, wxDefaultSize, 0);
+  PreserveOffsetsButton = new wxCheckBox(m_panel61, wxID_ANY, wxT("保留偏移量"), wxDefaultPosition, wxDefaultSize, 0);
   PreserveOffsetsButton->SetValue(true);
   PreserveOffsetsButton->Enable(false);
 
   bSizer131->Add(PreserveOffsetsButton, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText311;
-  m_staticText311 = new wxStaticText(m_panel61, wxID_ANY, wxT("Keep unchaged objects at there original offsets."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText311 = new wxStaticText(m_panel61, wxID_ANY, wxT("将未更改的对象保持在其原始偏移量."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText311->Wrap(FromDIP(480));
   bSizer131->Add(m_staticText311, 0, wxALL, FromDIP(5));
 
@@ -79,14 +79,14 @@ CookingOptionsWindow::CookingOptionsWindow(wxWindow* parent, FPackage* package, 
   wxBoxSizer* bSizer1311;
   bSizer1311 = new wxBoxSizer(wxVERTICAL);
 
-  CompressPackageButton = new wxCheckBox(m_panel611, wxID_ANY, wxT("Compress package"), wxDefaultPosition, wxDefaultSize, 0);
+  CompressPackageButton = new wxCheckBox(m_panel611, wxID_ANY, wxT("压缩包"), wxDefaultPosition, wxDefaultSize, 0);
   CompressPackageButton->SetValue(package->GetPackageFlag(PKG_NoSource) && package->GetSummary().CompressionFlags);
   CompressPackageButton->Enable(false);
 
   bSizer1311->Add(CompressPackageButton, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText3111;
-  m_staticText3111 = new wxStaticText(m_panel611, wxID_ANY, wxT("Compress the package using LZO algorithm to save disk space."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText3111 = new wxStaticText(m_panel611, wxID_ANY, wxT("使用LZO算法压缩包，节省磁盘空间."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText3111->Wrap(FromDIP(480));
   bSizer1311->Add(m_staticText3111, 0, wxALL, FromDIP(5));
 
