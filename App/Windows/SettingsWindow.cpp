@@ -92,11 +92,11 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   m_staticline2 = new wxStaticLine(m_panel2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL);
   bSizer4->Add(m_staticline2, 0, wxEXPAND | wxTOP | wxBOTTOM, 7);
 
-  UseBuiltInS1Game32 = new wxCheckBox(m_panel2, wxID_ANY, wxT("Use built-in 32-bit S1Game folder"), wxDefaultPosition, wxDefaultSize, 0);
+  UseBuiltInS1Game32 = new wxCheckBox(m_panel2, wxID_ANY, wxT("使用内置的32位S1Game文件夹"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer4->Add(UseBuiltInS1Game32, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText81;
-  m_staticText81 = new wxStaticText(m_panel2, wxID_ANY, wxT("Enable this option if you want to open a 32-bit GPK file, but you don't have a full 32-bit client."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText81 = new wxStaticText(m_panel2, wxID_ANY, wxT("如果要打开32位GPK文件，但没有完整的32位客户端，请启用此选项."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText81->Wrap(-1);
   bSizer4->Add(m_staticText81, 0, wxBOTTOM | wxRIGHT | wxLEFT, FromDIP(5));
 #endif
@@ -115,7 +115,7 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   bSizer12 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText10;
-  m_staticText10 = new wxStaticText(m_panel7, wxID_ANY, wxT("Utils"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText10 = new wxStaticText(m_panel7, wxID_ANY, wxT("工具"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText10->Wrap(-1);
   m_staticText10->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -126,16 +126,16 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   wxBoxSizer* bSizer13;
   bSizer13 = new wxBoxSizer(wxVERTICAL);
 
-  RebuildCacheButton = new wxButton(m_panel8, ControlElementId::DirCache, wxT("Rebuild Cache"), wxDefaultPosition, wxDefaultSize, 0);
-  RebuildCacheButton->SetToolTip(wxT("Update a cached list of packages in your ") + RootDir  + wxS(" folder. Usefull when ") + wxTheApp->GetAppDisplayName() + wxT(" can't find an object."));
+  RebuildCacheButton = new wxButton(m_panel8, ControlElementId::DirCache, wxT("重建缓存"), wxDefaultPosition, wxDefaultSize, 0);
+  RebuildCacheButton->SetToolTip(wxT("中的包的缓存列表") + RootDir  + wxS(" 文件夹. 检测为 ") + wxTheApp->GetAppDisplayName() + wxT(" can't find an object."));
   bSizer13->Add(RebuildCacheButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
-  UpdateMappingButton = new wxButton(m_panel8, ControlElementId::Mappers, wxT("Update Mapping"), wxDefaultPosition, wxDefaultSize, 0);
-  UpdateMappingButton->SetToolTip(wxT("Decrypt and update mappers. May be usefull after Tera update."));
+  UpdateMappingButton = new wxButton(m_panel8, ControlElementId::Mappers, wxT("更新映射"), wxDefaultPosition, wxDefaultSize, 0);
+  UpdateMappingButton->SetToolTip(wxT("解密和更新映射程序。Tera更新后可能会完全使用."));
   bSizer13->Add(UpdateMappingButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
-  ResetWarningsButton = new wxButton(m_panel8, ControlElementId::Warnings, wxT("Reset Warnings"), wxDefaultPosition, wxDefaultSize, 0);
-  ResetWarningsButton->SetToolTip(wxT("Reset all hidden UI warnings."));
+  ResetWarningsButton = new wxButton(m_panel8, ControlElementId::Warnings, wxT("重置警告"), wxDefaultPosition, wxDefaultSize, 0);
+  ResetWarningsButton->SetToolTip(wxT("重置所有隐藏的UI警告."));
   bSizer13->Add(ResetWarningsButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
 
@@ -174,9 +174,9 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
 
   wxStaticText* m_staticText9;
 #if IS_TERA_BUILD
-  m_staticText9 = new wxStaticText(m_panel5, wxID_ANY, wxT("This allows you to open *.gpk, *.gmp, *.upk, *.umap, and *.u packages by double clicking in the Windows File Explorer window. Press Associate to enable the feature or Dissociate to disable."), wxDefaultPosition, wxSize(-1, -1), 0);
+  m_staticText9 = new wxStaticText(m_panel5, wxID_ANY, wxT("这允许您通过双击Windows文件资源管理器窗口打开*.gpk、*.gmp、*.upk、*.umap和*.u程序包。按“关联”以启用该功能，或按“取消关联”以禁用."), wxDefaultPosition, wxSize(-1, -1), 0);
 #else
-  m_staticText9 = new wxStaticText(m_panel5, wxID_ANY, wxT("This allows you to open *.upk, *.umap, and *.u packages by double clicking in the Windows File Explorer window. Press Associate to enable the feature or Dissociate to disable."), wxDefaultPosition, wxSize(-1, -1), 0);
+  m_staticText9 = new wxStaticText(m_panel5, wxID_ANY, wxT("这允许您通过双击Windows文件资源管理器窗口来打开*.upk、*.umap和*.u程序包。按“关联”以启用该功能，或按“取消关联”以禁用."), wxDefaultPosition, wxSize(-1, -1), 0);
 #endif
   m_staticText9->Wrap(FromDIP(300));
   bSizer7->Add(m_staticText9, 0, wxALL, FromDIP(5));
@@ -186,13 +186,13 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
 
   WasRegistered = ((App*)wxTheApp)->CheckMimeTypes(true);
 
-  RegisterButton = new wxButton(m_panel5, ControlElementId::Register, wxT("Associate"), wxDefaultPosition, wxDefaultSize, 0);
+  RegisterButton = new wxButton(m_panel5, ControlElementId::Register, wxT("联合"), wxDefaultPosition, wxDefaultSize, 0);
   RegisterButton->SetToolTip(wxT("Allow to open packages in the Windows File Explorer by double clicking them."));
   RegisterButton->Enable(!WasRegistered);
   bSizer9->Add(RegisterButton, 0, wxALL, FromDIP(5));
 
   UnregisterButton = new wxButton(m_panel5, ControlElementId::Unregister, wxT("Dissociate"), wxDefaultPosition, wxDefaultSize, 0);
-  UnregisterButton->SetToolTip(wxT("Don't open packages in the Windows File Explorer by double clicking them."));
+  UnregisterButton->SetToolTip(wxT("不要双击Windows文件资源管理器中的包."));
   UnregisterButton->Enable(WasRegistered);
   bSizer9->Add(UnregisterButton, 0, wxALL, FromDIP(5));
 
@@ -210,13 +210,13 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   bSizer6->Fit(m_panel3);
   bSizer11->Add(m_panel3, 0, wxALL, FromDIP(5));
 
-  FastObjDump = new wxCheckBox(m_panel6, ControlElementId::FastDump, wxT("Reduced ObjectDump"));
+  FastObjDump = new wxCheckBox(m_panel6, ControlElementId::FastDump, wxT("减少的对象转储"));
   FastObjDump->SetToolTip(wxT("Generate small ObjectDump.txt by skipping Components and UPackages."));
   FastObjDump->SetValue(CurrentConfig.FastObjectDump);
   bSizer11->Add(FastObjDump, 0, wxALL, FromDIP(5));
 
-  ShowImportObjects = new wxCheckBox(m_panel6, ControlElementId::ShowImports, wxT("Show package imports"));
-  ShowImportObjects->SetToolTip(wxT("Allow GPK/UPK/UMAP object tree to display referenced objects(imports)."));
+  ShowImportObjects = new wxCheckBox(m_panel6, ControlElementId::ShowImports, wxT("显示程序包导入"));
+  ShowImportObjects->SetToolTip(wxT("允许GPK/UPK/UMAP对象树显示引用的对象（导入）."));
   ShowImportObjects->SetValue(CurrentConfig.ShowImports);
   bSizer11->Add(ShowImportObjects, 0, wxALL, FromDIP(5));
 
@@ -241,10 +241,10 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   m_panel10 = new wxPanel(m_panel9, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
   bSizer14->Add(m_panel10, 1, wxEXPAND | wxALL, FromDIP(5));
 
-  ApplyButton = new wxButton(m_panel9, wxID_OK, wxT("Apply"), wxDefaultPosition, wxDefaultSize, 0);
+  ApplyButton = new wxButton(m_panel9, wxID_OK, wxT("应用"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer14->Add(ApplyButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
-  CancelButton = new wxButton(m_panel9, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(m_panel9, wxID_CANCEL, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer14->Add(CancelButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
 
@@ -281,7 +281,7 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
     )
   {
     ApplyButton->Enable(false);
-    ApplyButton->SetToolTip(wxT("You must specify the \"" + RootDir + "\". Press \"Browse\" and select the folder."));
+    ApplyButton->SetToolTip(wxT("您必须指定\“”+RootDir+“\”。按“浏览”并选择文件夹."));
   }
   if (!AllowRebuild || !IsValidDir(CurrentConfig.RootDir.WString()))
   {
