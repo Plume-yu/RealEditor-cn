@@ -105,7 +105,7 @@ FlagsDialog::FlagsDialog(wxWindow* parent, const wxString& title)
   bSizer1 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText1;
-  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("Flags:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("标志:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText1->Wrap(-1);
   bSizer1->Add(m_staticText1, 0, wxALL, FromDIP(5));
 
@@ -118,16 +118,16 @@ FlagsDialog::FlagsDialog(wxWindow* parent, const wxString& title)
   wxBoxSizer* bSizer3;
   bSizer3 = new wxBoxSizer(wxHORIZONTAL);
 
-  DefaultsButton = new wxButton(this, wxID_ANY, wxT("Default"), wxDefaultPosition, wxDefaultSize, 0);
+  DefaultsButton = new wxButton(this, wxID_ANY, wxT("默认"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer3->Add(DefaultsButton, 0, wxALL, FromDIP(5));
 
 
   bSizer3->Add(0, 0, 1, wxEXPAND, FromDIP(5));
 
-  OkButton = new wxButton(this, wxID_ANY, wxT("OK"), wxDefaultPosition, wxDefaultSize, 0);
+  OkButton = new wxButton(this, wxID_ANY, wxT("确定"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer3->Add(OkButton, 0, wxALL, FromDIP(5));
 
-  CancelButton = new wxButton(this, wxID_ANY, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(this, wxID_ANY, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer3->Add(CancelButton, 0, wxALL, FromDIP(5));
 
 
