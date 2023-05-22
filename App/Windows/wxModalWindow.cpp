@@ -78,7 +78,7 @@ int wxModalWindow::ShowModal() {
 
   m_isShowingModal = true;
 
-  wxASSERT_MSG(!m_windowDisabler, _T("disabling windows twice?"));
+  wxASSERT_MSG(!m_windowDisabler, _T("强制动态阴影?"));
 
 #if defined(__WXGTK__) || defined(__WXMGL__)
   wxBusyCursorSuspender suspender;
@@ -97,13 +97,13 @@ int wxModalWindow::ShowModal() {
 
 
 void wxModalWindow::EndModal(int retCode) {
-  wxASSERT_MSG(m_eventLoop, _T("wxModalWindow is not modal"));
+  wxASSERT_MSG(m_eventLoop, _T("wxModalWindow不是模态的"));
 
   SetReturnCode(retCode);
 
   if (!IsModal())
   {
-    wxFAIL_MSG(wxT("wxModalWindow:EndModal called twice"));
+    wxFAIL_MSG(wxT("wxModalWindow:EndModal调用了两次"));
     return;
   }
 
