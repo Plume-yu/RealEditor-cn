@@ -180,7 +180,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer10->Add(m_panel111, 1, wxEXPAND | wxALL, FromDIP(5));
 
   wxStaticText* m_staticText511;
-  m_staticText511 = new wxStaticText(this, wxID_ANY, wxT("Options"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText511 = new wxStaticText(this, wxID_ANY, wxT("选择"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText511->Wrap(-1);
   m_staticText511->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -199,7 +199,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer191 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText8;
-  m_staticText8 = new wxStaticText(m_panel10, wxID_ANY, wxT("Global Scale:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText8 = new wxStaticText(m_panel10, wxID_ANY, wxT("Global 级别:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText8->Wrap(-1);
   bSizer191->Add(m_staticText8, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -215,12 +215,12 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   wxBoxSizer* bSizer182;
   bSizer182 = new wxBoxSizer(wxHORIZONTAL);
 
-  OverrideFiles = new wxCheckBox(m_panel10, wxID_ANY, wxT("Override files"), wxDefaultPosition, wxDefaultSize, 0);
+  OverrideFiles = new wxCheckBox(m_panel10, wxID_ANY, wxT("替换文件"), wxDefaultPosition, wxDefaultSize, 0);
   OverrideFiles->SetToolTip(wxT("Override existing data files(e.g., fbx)."));
 
   bSizer182->Add(OverrideFiles, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  IgnoreHidden = new wxCheckBox(m_panel10, wxID_ANY, wxT("Make all visible"), wxDefaultPosition, wxDefaultSize, 0);
+  IgnoreHidden = new wxCheckBox(m_panel10, wxID_ANY, wxT("使所有内容可见"), wxDefaultPosition, wxDefaultSize, 0);
   IgnoreHidden->SetToolTip(wxT("Make hidden objects visible. If this is disabled, hidden actors will be shown in the World Outliner, but UE4 won't show them in the scene view."));
 
   bSizer182->Add(IgnoreHidden, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
