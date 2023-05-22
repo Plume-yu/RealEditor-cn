@@ -101,7 +101,7 @@ private:
 };
 
 LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const LevelExportContext& ctx)
-  : WXDialog(parent, wxID_ANY, wxT("Export options"), wxDefaultPosition, wxSize(597, 592), wxDEFAULT_DIALOG_STYLE)
+  : WXDialog(parent, wxID_ANY, wxT("导出选项"), wxDefaultPosition, wxSize(597, 592), wxDEFAULT_DIALOG_STYLE)
 {
   SetSize(FromDIP(GetSize()));
   SetSizeHints(wxDefaultSize, wxDefaultSize);
@@ -110,7 +110,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer10 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText5;
-  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("Destination"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText5 = new wxStaticText(this, wxID_ANY, wxT("目标"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText5->Wrap(-1);
   m_staticText5->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -122,7 +122,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer11 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText6;
-  m_staticText6 = new wxStaticText(m_panel5, wxID_ANY, wxT("Select a folder to save exported data to."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText6 = new wxStaticText(m_panel5, wxID_ANY, wxT("选择要保存导出数据的文件夹."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText6->Wrap(-1);
   bSizer11->Add(m_staticText6, 0, wxTOP | wxRIGHT | wxLEFT, FromDIP(5));
 
@@ -130,11 +130,11 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer12 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText7;
-  m_staticText7 = new wxStaticText(m_panel5, wxID_ANY, wxT("Path:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText7 = new wxStaticText(m_panel5, wxID_ANY, wxT("路径:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText7->Wrap(-1);
   bSizer12->Add(m_staticText7, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  PathPicker = new wxDirPickerCtrl(m_panel5, wxID_ANY, wxEmptyString, wxT("Select a folder"), wxDefaultPosition, wxDefaultSize, wxDIRP_DEFAULT_STYLE);
+  PathPicker = new wxDirPickerCtrl(m_panel5, wxID_ANY, wxEmptyString, wxT("选择文件夹"), wxDefaultPosition, wxDefaultSize, wxDIRP_DEFAULT_STYLE);
   bSizer12->Add(PathPicker, 1, wxALL, FromDIP(5));
 
 
@@ -147,7 +147,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer10->Add(m_panel5, 0, wxEXPAND | wxALL, FromDIP(5));
 
   wxStaticText* m_staticText51;
-  m_staticText51 = new wxStaticText(this, wxID_ANY, wxT("Actors"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText51 = new wxStaticText(this, wxID_ANY, wxT("演员"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText51->Wrap(-1);
   m_staticText51->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -164,10 +164,10 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   wxBoxSizer* bSizer16;
   bSizer16 = new wxBoxSizer(wxVERTICAL);
 
-  TurnOnAllButton = new wxButton(m_panel111, wxID_ANY, wxT("All"), wxDefaultPosition, wxDefaultSize, 0);
+  TurnOnAllButton = new wxButton(m_panel111, wxID_ANY, wxT("全部"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer16->Add(TurnOnAllButton, 0, wxALL, FromDIP(5));
 
-  TurnOffAllButton = new wxButton(m_panel111, wxID_ANY, wxT("None"), wxDefaultPosition, wxDefaultSize, 0);
+  TurnOffAllButton = new wxButton(m_panel111, wxID_ANY, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer16->Add(TurnOffAllButton, 0, wxALL, FromDIP(5));
 
 
