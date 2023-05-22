@@ -221,12 +221,13 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer182->Add(OverrideFiles, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
   IgnoreHidden = new wxCheckBox(m_panel10, wxID_ANY, wxT("使所有内容可见"), wxDefaultPosition, wxDefaultSize, 0);
-  IgnoreHidden->SetToolTip(wxT("Make hidden objects visible. If this is disabled, hidden actors will be shown in the World Outliner, but UE4 won't show them in the scene view."));
+  IgnoreHidden->SetToolTip(wxT("跟读正在使用发音
+使隐藏的对象可见。如果禁用此选项，隐藏的演员将显示在“世界大纲视图”（World Outliner）中，但UE4不会在场景视图中显示."));
 
   bSizer182->Add(IgnoreHidden, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  SplitT3d = new wxCheckBox(m_panel10, wxID_ANY, wxT("Split T3D"), wxDefaultPosition, wxDefaultSize, 0);
-  SplitT3d->SetToolTip(wxT("Save each streamed level to it's own T3D file."));
+  SplitT3d = new wxCheckBox(m_panel10, wxID_ANY, wxT("拆分 T3D"), wxDefaultPosition, wxDefaultSize, 0);
+  SplitT3d->SetToolTip(wxT("将每个流式级别保存到自己的T3D文件中."));
 
   bSizer182->Add(SplitT3d, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -243,13 +244,13 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   wxBoxSizer* bSizer26;
   bSizer26 = new wxBoxSizer(wxHORIZONTAL);
 
-  Materials = new wxCheckBox(m_panel11, wxID_ANY, wxT("Export Materials"), wxDefaultPosition, wxDefaultSize, 0);
-  Materials->SetToolTip(wxT("Export parameters of materials used by actors. Will export materials that are related to current export operation."));
+  Materials = new wxCheckBox(m_panel11, wxID_ANY, wxT("导出材质"), wxDefaultPosition, wxDefaultSize, 0);
+  Materials->SetToolTip(wxT("导出参与者使用的材质的参数。将导出与当前导出操作相关的材料."));
 
   bSizer26->Add(Materials, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
-  Textures = new wxCheckBox(m_panel11, wxID_ANY, wxT("Export textures:"), wxDefaultPosition, wxDefaultSize, 0);
-  Textures->SetToolTip(wxT("Export textures, used by exported actors. Will export textures that are related to the current export operation."));
+  Textures = new wxCheckBox(m_panel11, wxID_ANY, wxT("导出纹理:"), wxDefaultPosition, wxDefaultSize, 0);
+  Textures->SetToolTip(wxT("导出纹理，由导出的演员使用。将导出与当前导出操作相关的纹理."));
 
   bSizer26->Add(Textures, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -257,7 +258,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   int TextureFormatSelectorNChoices = sizeof(TextureFormatSelectorChoices) / sizeof(wxString);
   TextureFormatSelector = new wxChoice(m_panel11, wxID_ANY, wxDefaultPosition, FromDIP(wxSize(100, -1)), TextureFormatSelectorNChoices, TextureFormatSelectorChoices, 0);
   TextureFormatSelector->SetSelection(0);
-  TextureFormatSelector->SetToolTip(wxT("Format used to save textures."));
+  TextureFormatSelector->SetToolTip(wxT("用于保存纹理的格式."));
 
   bSizer26->Add(TextureFormatSelector, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -265,7 +266,7 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   m_panel11->SetSizer(bSizer26);
   m_panel11->Layout();
   bSizer26->Fit(m_panel11);
-  m_notebook1->AddPage(m_panel11, wxT("Materials"), false);
+  m_notebook1->AddPage(m_panel11, wxT("材质"), false);
   wxPanel* m_panel12;
   m_panel12 = new wxPanel(m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
   wxBoxSizer* bSizer23;
@@ -301,12 +302,12 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   bSizer19 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText151;
-  m_staticText151 = new wxStaticText(m_panel9, wxID_ANY, wxT("Spot lights scale:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText151 = new wxStaticText(m_panel9, wxID_ANY, wxT("聚光灯比例:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText151->Wrap(-1);
   bSizer19->Add(m_staticText151, 0, wxALIGN_CENTER_VERTICAL | wxTOP | wxBOTTOM | wxLEFT, FromDIP(5));
 
   SpotLightMultiplier = new wxTextCtrl(m_panel9, wxID_ANY, wxT("1.0"), wxDefaultPosition, FromDIP(wxSize(35, -1)), 0);
-  SpotLightMultiplier->SetToolTip(wxT("Multiply spot light intensity by this value."));
+  SpotLightMultiplier->SetToolTip(wxT("将聚光灯强度乘以该值."));
 
   bSizer19->Add(SpotLightMultiplier, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -322,13 +323,13 @@ LevelExportOptionsWindow::LevelExportOptionsWindow(wxWindow* parent, const Level
   wxBoxSizer* bSizer15;
   bSizer15 = new wxBoxSizer(wxHORIZONTAL);
 
-  LightInvSqrt = new wxCheckBox(m_panel12, wxID_ANY, wxT("Use inverse squared falloff"), wxDefaultPosition, wxDefaultSize, 0);
-  LightInvSqrt->SetToolTip(wxT("Use physically based inverse squared distance falloff."));
+  LightInvSqrt = new wxCheckBox(m_panel12, wxID_ANY, wxT("使用平方反比衰减"), wxDefaultPosition, wxDefaultSize, 0);
+  LightInvSqrt->SetToolTip(wxT("使用基于物理的倒数平方距离衰减."));
 
   bSizer15->Add(LightInvSqrt, 0, wxALL, FromDIP(5));
 
-  DynamicShadows = new wxCheckBox(m_panel12, wxID_ANY, wxT("Force dynamic shadows"), wxDefaultPosition, wxDefaultSize, 0);
-  DynamicShadows->SetToolTip(wxT("Enables dynamic shadows for objects that have this option explicitly disabled by developers. Enable this if you plan to use dynamic lighting."));
+  DynamicShadows = new wxCheckBox(m_panel12, wxID_ANY, wxT("强制动态阴影"), wxDefaultPosition, wxDefaultSize, 0);
+  DynamicShadows->SetToolTip(wxT("为开发人员明确禁用此选项的对象启用动态阴影。如果计划使用动态照明，请启用此选项."));
 
   bSizer15->Add(DynamicShadows, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
