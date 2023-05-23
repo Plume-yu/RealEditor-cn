@@ -126,7 +126,7 @@ namespace
       bSizer15 = new wxBoxSizer(wxVERTICAL);
 
       wxStaticText* m_staticText9;
-      m_staticText9 = new wxStaticText(m_panel4, wxID_ANY, wxT("This action requires Real Editor to have elevated permissions."), wxDefaultPosition, wxDefaultSize, 0);
+      m_staticText9 = new wxStaticText(m_panel4, wxID_ANY, wxT("此操作要求Real Editor具有提升的权限."), wxDefaultPosition, wxDefaultSize, 0);
       m_staticText9->Wrap(-1);
       m_staticText9->SetFont(wxFont(11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxT("Segoe UI Semibold")));
       m_staticText9->SetForegroundColour(wxColour(0, 45, 128));
@@ -138,7 +138,7 @@ namespace
       {
         desc += '\n';
       }
-      desc += wxT("Press Restart as Administrator to restart Real Editor under different credentials.\nAll unsaved changes will be lost.");
+      desc += wxT("按“以管理员身份重新启动”以在不同凭据下重新启动Real Editor。\所有未保存的更改都将丢失.");
       Description = new wxStaticText(m_panel4, wxID_ANY, desc, wxDefaultPosition, wxDefaultSize, 0);
       Description->Wrap(FromDIP(460));
       bSizer15->Add(Description, 0, wxRIGHT | wxLEFT, 10);
@@ -167,10 +167,10 @@ namespace
 
       bSizer13->Add(0, 0, 1, wxEXPAND, FromDIP(5));
 
-      OkButton = new wxButton(m_panel5, wxID_ANY, wxT("Restart as Administrator"), wxDefaultPosition, wxDefaultSize, 0);
+      OkButton = new wxButton(m_panel5, wxID_ANY, wxT("以管理员身份重新启动"), wxDefaultPosition, wxDefaultSize, 0);
       bSizer13->Add(OkButton, 0, wxALL, FromDIP(5));
 
-      CancelButton = new wxButton(m_panel5, wxID_ANY, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+      CancelButton = new wxButton(m_panel5, wxID_ANY, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
       bSizer13->Add(CancelButton, 0, wxALL, FromDIP(5));
 
 
@@ -256,16 +256,16 @@ namespace IODialog
     if (!mode)
     {
       wxString fname = filename;
-      if (!fname.EndsWith(wxT(".unpacked")))
+      if (!fname.EndsWith(wxT(".解包")))
       {
-        fname += wxT(".unpacked");
+        fname += wxT(".解包");
       }
       wxString dir = path;
       if (dir.IsEmpty())
       {
         dir = cfg.LastDcSavePath.WString();
       }
-      wxString result = wxFileSelector(wxT("Save unpacked datacenter..."), dir, fname, wxT(".unpacked"), wxT("Unpacked DataCenter files (*.unpacked)|*.unpacked"), wxFD_OPEN, parent);
+      wxString result = wxFileSelector(wxT("保存未打包的DC..."), dir, fname, wxT(".解包"), wxT("解包 DataCenter 文件 (*.unpacked)|*.unpacked"), wxFD_OPEN, parent);
       if (result.size())
       {
         cfg.LastDcSavePath = result.ToStdWstring();
@@ -278,7 +278,7 @@ namespace IODialog
     {
       dir = cfg.LastDcSavePath.WString();
     }
-    return wxDirSelector(wxT("Directory to save datacenter..."), dir, wxDD_DEFAULT_STYLE | wxDD_DIR_MUST_EXIST);
+    return wxDirSelector(wxT("保存数据中心的目录..."), dir, wxDD_DEFAULT_STYLE | wxDD_DIR_MUST_EXIST);
   }
 
   wxString OpenMapperForEncryption(wxWindow* parent, const wxString& filename)
@@ -290,7 +290,7 @@ namespace IODialog
     {
       path = cfg.RootDir.WString();
     }
-    return wxFileSelector(wxT("Mapper file to encrypt..."), path, filename, wxEmptyString, wxS("Text files (*.txt)|*.txt"), wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
+    return wxFileSelector(wxT("要加密的映射器文件..."), path, filename, wxEmptyString, wxS("Text files (*.txt)|*.txt"), wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
   }
 
   wxString OpenMapperForDecryption(wxWindow* parent, const wxString& filename)
@@ -302,19 +302,19 @@ namespace IODialog
     {
       path = cfg.RootDir.WString();
     }
-    return wxFileSelector(wxT("Mapper file to decrypt..."), path, filename, wxEmptyString, wxS("Mapper files (*.dat)|*.dat"), wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
+    return wxFileSelector(wxT("要解密的映射器文件..."), path, filename, wxEmptyString, wxS("Mapper files (*.dat)|*.dat"), wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
   }
 
   wxString SaveEncryptedMapperFile(wxWindow* parent, const wxString& filename)
   {
     REScopedDialogCounter h;
-    return wxFileSelector(wxT("Save encrypted file"), wxEmptyString, filename, wxEmptyString, wxS("Mapper file (*.dat)|*.dat"), wxFD_SAVE, parent);
+    return wxFileSelector(wxT("保存加密文件"), wxEmptyString, filename, wxEmptyString, wxS("Mapper file (*.dat)|*.dat"), wxFD_SAVE, parent);
   }
 
   wxString SaveDecryptedMapperFile(wxWindow* parent, const wxString& filename)
   {
     REScopedDialogCounter h;
-    return wxFileSelector(wxT("Save decrypted file"), wxEmptyString, filename, wxEmptyString, wxS("Text file (*.txt)|*.txt"), wxFD_SAVE, parent);
+    return wxFileSelector(wxT("保存解密的文件"), wxEmptyString, filename, wxEmptyString, wxS("Text file (*.txt)|*.txt"), wxFD_SAVE, parent);
   }
 
   wxString OpenPackageDialog(wxWindow* parent, const wxString& inPath, const wxString& caption)
@@ -413,7 +413,7 @@ namespace IODialog
     }
     else
     {
-      extensions = wxT("DDS files (*.dds)|*.dds");
+      extensions = wxT("DDS 文件 (*.dds)|*.dds");
     }
 
     wxString result = wxFileSelector(caption, path, wxEmptyString, extensions, extensions, wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
