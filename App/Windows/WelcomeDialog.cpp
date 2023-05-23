@@ -169,7 +169,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   bSizer3 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText1;
-  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("Common actions"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("常见操作"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText1->Wrap(-1);
   m_staticText1->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -285,7 +285,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   bSizer3->Add(m_panel3, 0, wxEXPAND | wxALL, FromDIP(5));
 
   ShowWelcome = new wxCheckBox(this, wxID_ANY, wxT("关闭最后一个程序包窗口时显示此对话框"), wxDefaultPosition, wxDefaultSize, 0);
-  ShowWelcome->SetToolTip(wxT("Disable this option if you want Real Editor to exit after a last package window is closed."));
+  ShowWelcome->SetToolTip(wxT("如果您希望Real Editor在最后一个程序包窗口关闭后退出，请禁用此选项."));
   ShowWelcome->SetValue(true);
   bSizer3->Add(ShowWelcome, 0, wxALL, FromDIP(5));
 
@@ -306,7 +306,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
 
   bSizer14->Add(0, 0, 1, wxEXPAND, FromDIP(5));
 
-  CloseButton = new wxButton(this, wxID_ANY, wxT("Close"), wxDefaultPosition, wxDefaultSize, 0);
+  CloseButton = new wxButton(this, wxID_ANY, wxT("关闭"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer14->Add(CloseButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
 
@@ -518,7 +518,7 @@ void WelcomeDialog::OnSettingsClicked(wxCommandEvent& event)
   {
     if (currentConfig.RootDir.Size() && currentConfig.RootDir != newConfig.RootDir)
     {
-      wxMessageDialog dialog(nullptr, wxT("Application must restart to apply changes.\nClick \"OK\" to restart."), wxT("Restart ") + wxTheApp->GetAppDisplayName() + wxT("?"), wxOK | wxCANCEL | wxICON_EXCLAMATION);
+      wxMessageDialog dialog(nullptr, wxT("应用程序必须重新启动才能应用更改。\单击“确定”重新启动."), wxT("重新启动 ") + wxTheApp->GetAppDisplayName() + wxT("?"), wxOK | wxCANCEL | wxICON_EXCLAMATION);
       if (dialog.ShowModal() != wxID_OK)
       {
         return;
