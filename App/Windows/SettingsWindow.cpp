@@ -67,7 +67,7 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   bSizer5 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText7;
-  m_staticText7 = new wxStaticText(m_panel2, wxID_ANY, wxT("Path:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText7 = new wxStaticText(m_panel2, wxID_ANY, wxT("路径:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText7->Wrap(-1);
   bSizer5->Add(m_staticText7, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
@@ -75,7 +75,7 @@ SettingsWindow::SettingsWindow(const FAppConfig& currentConfig, FAppConfig& outp
   bSizer5->Add(PathField, 1, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
   PathField->Enable(!CurrentConfig.UseBuiltInS1Game32);
 
-  BrowseButton = new wxButton(m_panel2, ControlElementId::Browse, wxT("Browse..."), wxDefaultPosition, wxDefaultSize, 0);
+  BrowseButton = new wxButton(m_panel2, ControlElementId::Browse, wxT("浏览..."), wxDefaultPosition, wxDefaultSize, 0);
   bSizer5->Add(BrowseButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
   BrowseButton->Enable(!CurrentConfig.UseBuiltInS1Game32);
 
