@@ -114,7 +114,7 @@ EPixelFormat TextureImporterOptions::GetDDSPixelFormat(const wxString& ddsPath)
 }
 
 TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fmt, bool bNormal, bool bSRGB, TextureAddress addressX, TextureAddress addressY)
-  : WXDialog(parent, wxID_ANY, wxT("Import options"), wxDefaultPosition, wxSize(552, 595))
+  : WXDialog(parent, wxID_ANY, wxT("导入选项"), wxDefaultPosition, wxSize(552, 595))
 {
   SetSize(FromDIP(GetSize()));
   SetSizeHints(wxDefaultSize, wxDefaultSize);
@@ -126,7 +126,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer11 = new wxBoxSizer(wxVERTICAL);
 
   wxStaticText* m_staticText1;
-  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("Format"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText1 = new wxStaticText(this, wxID_ANY, wxT("格式化"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText1->Wrap(-1);
   m_staticText1->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -138,7 +138,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText2;
-  m_staticText2 = new wxStaticText(m_panel1, wxID_ANY, wxT("Select Pixel Format to convert your image to. As a rule of thumb, use 'DXT1' when your image has no transparency, otherwise 'DXT5' is your choice."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText2 = new wxStaticText(m_panel1, wxID_ANY, wxT("选择要将图像转换为的像素格式。根据经验，当图像没有透明度时，请使用“DXT1”，否则您可以选择“DXT5”."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText2->Wrap(FromDIP(400));
   bSizer2->Add(m_staticText2, 0, wxALL, FromDIP(5));
 
@@ -159,7 +159,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer11->Add(m_panel1, 0, wxEXPAND | wxALL, FromDIP(5));
 
   wxStaticText* m_staticText3;
-  m_staticText3 = new wxStaticText(this, wxID_ANY, wxT("Color"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText3 = new wxStaticText(this, wxID_ANY, wxT("颜色"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText3->Wrap(-1);
   m_staticText3->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -170,13 +170,13 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   wxBoxSizer* bSizer3;
   bSizer3 = new wxBoxSizer(wxVERTICAL);
 
-  Normal = new wxCheckBox(m_panel2, ControlElementId::Normal, wxT("Normal map"), wxDefaultPosition, wxDefaultSize, 0);
+  Normal = new wxCheckBox(m_panel2, ControlElementId::Normal, wxT("法线贴图"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer3->Add(Normal, 0, wxALL, FromDIP(5));
   Normal->SetValue(bNormal);
   Normal->Enable(!bSRGB);
 
   wxStaticText* m_staticText7;
-  m_staticText7 = new wxStaticText(m_panel2, wxID_ANY, wxT("Normal maps are compressed differently. Check this option if you are importing a normal map."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText7 = new wxStaticText(m_panel2, wxID_ANY, wxT("法线贴图的压缩方式不同。如果要导入法线贴图，请选中此选项."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText7->Wrap(FromDIP(515));
   bSizer3->Add(m_staticText7, 0, wxALL, FromDIP(5));
 
@@ -190,7 +190,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   SRGB->Enable(!bNormal);
 
   wxStaticText* m_staticText8;
-  m_staticText8 = new wxStaticText(m_panel2, wxID_ANY, wxT("Check this if your image uses sRGB color space. This option is unavailable for normal maps."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText8 = new wxStaticText(m_panel2, wxID_ANY, wxT("如果您的图像使用sRGB颜色空间，请选中此项。此选项不适用于法线贴图."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText8->Wrap(-1);
   bSizer3->Add(m_staticText8, 0, wxALL, FromDIP(5));
 
@@ -212,13 +212,13 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   wxBoxSizer* bSizer14;
   bSizer14 = new wxBoxSizer(wxVERTICAL);
 
-  GenMips = new wxCheckBox(m_panel9, ControlElementId::MipGen, wxT("Generate mipmaps"), wxDefaultPosition, wxDefaultSize, 0);
+  GenMips = new wxCheckBox(m_panel9, ControlElementId::MipGen, wxT("生成mipmaps"), wxDefaultPosition, wxDefaultSize, 0);
   GenMips->SetValue(false);
   GenMips->Enable(HasAVX2());
   bSizer14->Add(GenMips, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText20;
-  m_staticText20 = new wxStaticText(m_panel9, wxID_ANY, wxT("Generating mipmaps during import saves GPU time during the gameplay."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText20 = new wxStaticText(m_panel9, wxID_ANY, wxT("在导入过程中生成mipmaps可节省游戏过程中的GPU时间."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText20->Wrap(-1);
   bSizer14->Add(m_staticText20, 0, wxALL, FromDIP(5));
 
@@ -226,12 +226,12 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer20 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText15;
-  m_staticText15 = new wxStaticText(m_panel9, wxID_ANY, wxT("Mipmaps are rendered on distant objects to reduce GPU cost and during texture loading."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText15 = new wxStaticText(m_panel9, wxID_ANY, wxT("ipmap在远处的对象上渲染，以降低GPU成本并在纹理加载过程中进行渲染."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText15->Wrap(FromDIP(350));
   bSizer20->Add(m_staticText15, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText16;
-  m_staticText16 = new wxStaticText(m_panel9, wxID_ANY, wxT("Method:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText16 = new wxStaticText(m_panel9, wxID_ANY, wxT("方法:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText16->Wrap(-1);
   m_staticText16->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
