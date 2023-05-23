@@ -253,7 +253,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   bSizer15->Add(DataCenterButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText61;
-  m_staticText61 = new wxStaticText(m_panel3, wxID_ANY, wxT("Unpack and export DataCenter_Final.dat file"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText61 = new wxStaticText(m_panel3, wxID_ANY, wxT("解压并导出 DataCenter_Final.dat 文件"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText61->Wrap(-1);
   bSizer15->Add(m_staticText61, 1, wxTOP | wxBOTTOM | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -263,11 +263,11 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   wxBoxSizer* bSizer16;
   bSizer16 = new wxBoxSizer(wxHORIZONTAL);
 
-  SettingsButton = new wxButton(m_panel3, wxID_ANY, wxT("Settings"), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
+  SettingsButton = new wxButton(m_panel3, wxID_ANY, wxT("设置"), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
   bSizer16->Add(SettingsButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText10;
-  m_staticText10 = new wxStaticText(m_panel3, wxID_ANY, wxT("Real Editor settings"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText10 = new wxStaticText(m_panel3, wxID_ANY, wxT("Real Editor 设置"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText10->Wrap(-1);
   bSizer16->Add(m_staticText10, 0, wxTOP | wxBOTTOM | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -284,7 +284,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   bSizer5->Fit(m_panel3);
   bSizer3->Add(m_panel3, 0, wxEXPAND | wxALL, FromDIP(5));
 
-  ShowWelcome = new wxCheckBox(this, wxID_ANY, wxT("Show this dialog when a last package window is closed"), wxDefaultPosition, wxDefaultSize, 0);
+  ShowWelcome = new wxCheckBox(this, wxID_ANY, wxT("关闭最后一个程序包窗口时显示此对话框"), wxDefaultPosition, wxDefaultSize, 0);
   ShowWelcome->SetToolTip(wxT("Disable this option if you want Real Editor to exit after a last package window is closed."));
   ShowWelcome->SetValue(true);
   bSizer3->Add(ShowWelcome, 0, wxALL, FromDIP(5));
