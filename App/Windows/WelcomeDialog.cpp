@@ -187,7 +187,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   wxBoxSizer* bSizer4;
   bSizer4 = new wxBoxSizer(wxHORIZONTAL);
 
-  OpenFileButton = new wxButton(m_panel3, wxID_ANY, wxT("Open package..."), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
+  OpenFileButton = new wxButton(m_panel3, wxID_ANY, wxT("打开压缩包..."), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
 #if IS_TERA_BUILD
   OpenFileButton->SetToolTip(wxT("Open a GPK, GMP, U file from a disk"));
 #endif
@@ -196,9 +196,9 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
 
   wxStaticText* m_staticText13;
 #if IS_TERA_BUILD
-  m_staticText13 = new wxStaticText(m_panel3, wxID_ANY, wxT("Open a GPK/GMP/U file"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText13 = new wxStaticText(m_panel3, wxID_ANY, wxT("打开GPK/GMP/U 文件"), wxDefaultPosition, wxDefaultSize, 0);
 #else
-  m_staticText13 = new wxStaticText(m_panel3, wxID_ANY, wxT("Open a UPK/UMAP/U file"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText13 = new wxStaticText(m_panel3, wxID_ANY, wxT("打开UPK/UMAP/U 文件"), wxDefaultPosition, wxDefaultSize, 0);
 #endif
   m_staticText13->Wrap(-1);
   bSizer4->Add(m_staticText13, 0, wxTOP | wxBOTTOM | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -213,14 +213,14 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   bSizer18 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText3;
-  m_staticText3 = new wxStaticText(m_panel3, wxID_ANY, wxT("Open by name:"), wxDefaultPosition, FromDIP(wxSize(110, -1)), wxALIGN_RIGHT);
+  m_staticText3 = new wxStaticText(m_panel3, wxID_ANY, wxT("按名称打开:"), wxDefaultPosition, FromDIP(wxSize(110, -1)), wxALIGN_RIGHT);
   m_staticText3->Wrap(-1);
   bSizer18->Add(m_staticText3, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(5));
 
   OpenByNameField = new wxTextCtrl(m_panel3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(-1, -1), wxTE_PROCESS_ENTER);
   bSizer18->Add(OpenByNameField, 1, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
-  OpenByNameButton = new wxButton(m_panel3, wxID_ANY, wxT("Open"), wxDefaultPosition, wxDefaultSize, 0);
+  OpenByNameButton = new wxButton(m_panel3, wxID_ANY, wxT("打开"), wxDefaultPosition, wxDefaultSize, 0);
   OpenByNameButton->SetToolTip(wxT("Open a package by name"));
 
   bSizer18->Add(OpenByNameButton, 0, wxALL | wxALIGN_CENTER_VERTICAL, FromDIP(5));
@@ -235,11 +235,11 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   wxBoxSizer* bSizer10;
   bSizer10 = new wxBoxSizer(wxHORIZONTAL);
 
-  ObjectDumpButton = new wxButton(m_panel3, wxID_ANY, wxT("Object dump..."), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
+  ObjectDumpButton = new wxButton(m_panel3, wxID_ANY, wxT("Object 转存..."), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
   bSizer10->Add(ObjectDumpButton, 0, wxALL, FromDIP(5));
 
   wxStaticText* m_staticText6;
-  m_staticText6 = new wxStaticText(m_panel3, wxID_ANY, wxT("Generate a composite object dump(ObjectDump.txt)"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText6 = new wxStaticText(m_panel3, wxID_ANY, wxT("生成复合对象转(ObjectDump.txt)"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText6->Wrap(-1);
   bSizer10->Add(m_staticText6, 1, wxTOP | wxBOTTOM | wxRIGHT | wxALIGN_CENTER_VERTICAL, FromDIP(5));
 
@@ -249,7 +249,7 @@ WelcomeDialog::WelcomeDialog(wxWindow* parent)
   wxBoxSizer* bSizer15;
   bSizer15 = new wxBoxSizer(wxHORIZONTAL);
 
-  DataCenterButton = new wxButton(m_panel3, wxID_ANY, wxT("DataCenter Tool"), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
+  DataCenterButton = new wxButton(m_panel3, wxID_ANY, wxT("DataCenter 工具"), wxDefaultPosition, FromDIP(wxSize(115, -1)), 0);
   bSizer15->Add(DataCenterButton, 0, wxALL | wxEXPAND, FromDIP(5));
 
   wxStaticText* m_staticText61;
