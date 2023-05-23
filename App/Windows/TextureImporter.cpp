@@ -257,7 +257,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
 
 
   wxStaticText* m_staticText9;
-  m_staticText9 = new wxStaticText(this, wxID_ANY, wxT("Address Mode"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText9 = new wxStaticText(this, wxID_ANY, wxT("地址模式"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText9->Wrap(-1);
   m_staticText9->SetFont(wxFont(wxNORMAL_FONT->GetPointSize(), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
 
@@ -269,7 +269,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer4 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText10;
-  m_staticText10 = new wxStaticText(m_panel3, wxID_ANY, wxT("Address mode defines the game's texture sampler behavior. Generally, you don't want to change this unless you know what you are doing."), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText10 = new wxStaticText(m_panel3, wxID_ANY, wxT("地址模式定义了游戏的纹理采样器行为。一般来说，除非你知道自己在做什么，否则你不想改变这一点。."), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText10->Wrap(FromDIP(330));
   bSizer4->Add(m_staticText10, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
@@ -282,7 +282,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer6 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText11;
-  m_staticText11 = new wxStaticText(m_panel4, wxID_ANY, wxT("Address X:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText11 = new wxStaticText(m_panel4, wxID_ANY, wxT("坐标 X:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText11->Wrap(-1);
   bSizer6->Add(m_staticText11, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
@@ -302,7 +302,7 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   bSizer61 = new wxBoxSizer(wxHORIZONTAL);
 
   wxStaticText* m_staticText111;
-  m_staticText111 = new wxStaticText(m_panel4, wxID_ANY, wxT("Address Y:"), wxDefaultPosition, wxDefaultSize, 0);
+  m_staticText111 = new wxStaticText(m_panel4, wxID_ANY, wxT("坐标 Y:"), wxDefaultPosition, wxDefaultSize, 0);
   m_staticText111->Wrap(-1);
   bSizer61->Add(m_staticText111, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
@@ -342,11 +342,11 @@ TextureImporterOptions::TextureImporterOptions(wxWindow* parent, EPixelFormat fm
   m_panel6 = new wxPanel(m_panel5, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
   bSizer10->Add(m_panel6, 1, wxEXPAND | wxALL, FromDIP(5));
 
-  ImportButton = new wxButton(m_panel5, wxID_OK, wxT("Import"), wxDefaultPosition, wxDefaultSize, 0);
+  ImportButton = new wxButton(m_panel5, wxID_OK, wxT("导入"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer10->Add(ImportButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
   ImportButton->SetFocus();
 
-  CancelButton = new wxButton(m_panel5, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0);
+  CancelButton = new wxButton(m_panel5, wxID_CANCEL, wxT("取消"), wxDefaultPosition, wxDefaultSize, 0);
   bSizer10->Add(CancelButton, 0, wxALIGN_CENTER_VERTICAL | wxALL, FromDIP(5));
 
   m_panel5->SetSizer(bSizer10);
